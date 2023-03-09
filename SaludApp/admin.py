@@ -1,3 +1,6 @@
 from django.contrib import admin
+from SaludApp.models import *
 
-# Register your models here.
+admin.site.register(Pacientes)
+admin.site.register(Medicos)
+admin.site.register(Otros_Profesionales)
