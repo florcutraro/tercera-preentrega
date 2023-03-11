@@ -15,12 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from SaludApp.views import index, pacientes, medicos, otros
+from SaludApp.views import index, pacientes, medicos, otros, agregar_medico, agregar_paciente, agregar_otro
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index, name = "Inicio"),
     path('pacientes', pacientes, name="Pacientes"),
     path('medicos', medicos, name = "Medicos"),
+    path('medicos/agregar', agregar_medico, name = "agregar-medico"),
+    path('pacientes/agregar', agregar_paciente, name = "agregar-paciente"),
     path('otros', otros, name = "Otros"),
+    path('otros/agregar', agregar_otro, name = "agregar-otro"),
 ]

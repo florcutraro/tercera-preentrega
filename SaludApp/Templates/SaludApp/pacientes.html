@@ -4,8 +4,14 @@
 
 {% block contenidoQueCambia %}
 
-    <h1>Pacientes</h1>
-    <p>Info de los pacientes</p>
+<h1>Pacientes</h1>
+    <p>Registrate en nuestra base de datos:</p>
+
+        <form action="{% url 'agregar-paciente' %}" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Agregar">
+        </form>
 
   
 

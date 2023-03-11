@@ -5,7 +5,13 @@
 {% block contenidoQueCambia %}
 
     <h1>Médicos</h1>
-    <p>Info de los médicos</p>
+    <p>Registrate en nuestra base de datos:</p>
+
+        <form action="{% url 'agregar-medico' %}" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Agregar">
+        </form>
 
   
 
