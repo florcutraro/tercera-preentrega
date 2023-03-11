@@ -59,3 +59,20 @@ def agregar_otro(request):
           "otros": Otros_Profesionales.objects.all(),
      }
      return render(request, 'SaludApp/otros.html', context)
+
+def buscar_medico(request):
+     return render(request, 'SaludApp/buscar.html')
+
+def buscar(request):
+
+     if request.GET['Especialidad']:
+
+          Especialidad = request.GET['Especialidad']
+          medicos = Medicos.objects.filter(Especialidad__icontains=Especialidad)
+
+          return render(request, 'SaludApp/buscar.html', {"medicos":medicos, "Especialidad": Especialidad})
+     
+     else:
+          respuesta = "No enviaste datos"
+     
+     return HttpResponse(respuesta)

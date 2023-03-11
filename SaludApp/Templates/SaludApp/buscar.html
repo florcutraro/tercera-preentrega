@@ -1,0 +1,39 @@
+{% extends "SaludApp/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<h3>Ingresá una especialidad médica y accede a la base de datos de médicos registrados en nuestro sistema para esa especialidad</h3>
+
+<form action="{% url 'buscar' %}" method="GET">
+
+    <input type="text" name="Especialidad" id="Especialidad">
+
+    <input type="submit" value="Buscar">
+
+
+
+
+</form>
+
+
+
+{% if medicos %}
+
+<p>Estás buscando médicos especialistas en: {{Especialidad}}</p>
+
+<ul>
+{% for i in medicos %}
+    <li> {{i.Apellido}}, {{i.Nombre}} </li>
+{% endfor %}
+
+</ul>
+
+{% else %}
+
+<p>Al momento no hay médicos registrados en esa especialidad.</p>
+
+{% endif %}
+
+{% endblock %}

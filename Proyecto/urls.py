@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from SaludApp.views import index, pacientes, medicos, otros, agregar_medico, agregar_paciente, agregar_otro
+from SaludApp.views import index, pacientes, medicos, otros, agregar_medico, agregar_paciente, agregar_otro, buscar_medico, buscar
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,4 +26,6 @@ urlpatterns = [
     path('pacientes/agregar', agregar_paciente, name = "agregar-paciente"),
     path('otros', otros, name = "Otros"),
     path('otros/agregar', agregar_otro, name = "agregar-otro"),
+    path('buscar_medico', buscar_medico, name = "buscar-medico"),
+    path('buscar', buscar, name = "buscar"),
 ]
