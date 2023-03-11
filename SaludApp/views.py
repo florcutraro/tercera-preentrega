@@ -9,7 +9,7 @@ def index(request):
 def pacientes(request):
      context = {
          "form": PacientesForm(),
-         "medicos": Pacientes.objects.all(),
+         "pacientes": Pacientes.objects.all(),
          }
 
     
